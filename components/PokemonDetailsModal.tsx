@@ -138,7 +138,8 @@ export default function PokemonDetailsModal({
     }
 
     // Calculate next index with wrap-around
-    let nextIndex =
+    // was let before
+    const nextIndex =
       direction === "next"
         ? (currentIndex + 1) % pokemonList.length
         : (currentIndex - 1 + pokemonList.length) % pokemonList.length;
