@@ -1,11 +1,32 @@
+// import { Suspense } from "react";
+// import ClientHome from "./client-home";
+
+// export default function Home({
+//   searchParams,
+// }: {
+//   searchParams: { query?: string; sort?: string; order?: "asc" | "desc" };
+// }) {
+//   return (
+//     <Suspense fallback={<div>Loading...</div>}>
+//       <ClientHome
+//         initialQuery={searchParams.query}
+//         initialSort={searchParams.sort}
+//         initialOrder={searchParams.order}
+//       />
+//     </Suspense>
+//   );
+// }
+
 import { Suspense } from "react";
 import ClientHome from "./client-home";
 
-export default function Home({
-  searchParams,
-}: {
-  searchParams: { query?: string; sort?: string; order?: "asc" | "desc" };
-}) {
+interface SearchParams {
+  query?: string;
+  sort?: string;
+  order?: "asc" | "desc";
+}
+
+export default function Home({ searchParams }: { searchParams: SearchParams }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <ClientHome
