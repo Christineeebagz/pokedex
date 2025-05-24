@@ -164,7 +164,7 @@ export default function PokemonDetailsModal({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentPokemon, pokemonList]);
+  }, [currentPokemon, pokemonList, navigatePokemon, onClose]);
 
   // Get weaknesses
   const getWeaknesses = () => {

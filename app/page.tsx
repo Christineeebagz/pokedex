@@ -26,7 +26,11 @@ interface SearchParams {
   order?: "asc" | "desc";
 }
 
-export default function Home({ searchParams }: { searchParams: SearchParams }) {
+export default function Home({
+  searchParams,
+}: {
+  searchParams: SearchParams; // Now using the interface
+}) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <ClientHome
