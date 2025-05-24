@@ -1,10 +1,16 @@
 // import { Suspense } from "react";
 // import ClientHome from "./client-home";
 
+// interface SearchParams {
+//   query?: string;
+//   sort?: string;
+//   order?: "asc" | "desc";
+// }
+
 // export default function Home({
 //   searchParams,
 // }: {
-//   searchParams: { query?: string; sort?: string; order?: "asc" | "desc" };
+//   searchParams: SearchParams; // Now using the interface
 // }) {
 //   return (
 //     <Suspense fallback={<div>Loading...</div>}>
@@ -20,27 +26,29 @@
 import { Suspense } from "react";
 import ClientHome from "./client-home";
 
+// Optional: Define the searchParams shape
 interface SearchParams {
   query?: string;
   sort?: string;
   order?: "asc" | "desc";
 }
 
-export default function Home({
-  searchParams,
-}: {
-  searchParams: SearchParams; // Now using the interface
-}) {
+interface PageProps {
+  searchParams: SearchParams;
+}
+
+export default function Home({ searchParams }: PageProps) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <ClientHome
-        initialQuery={searchParams.query}
-        initialSort={searchParams.sort}
-        initialOrder={searchParams.order}
+        initialQuery={searchParams?.query}
+        initialSort={searchParams?.sort}
+        initialOrder={searchParams?.order as "asc" | "desc"}
       />
     </Suspense>
   );
 }
+
 // import { useState, useEffect } from "react";
 // import LoadMore from "@/components/LoadMore";
 // import PokemonCard from "@/components/PokemonCard";
