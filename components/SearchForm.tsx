@@ -46,27 +46,3 @@ const SearchForm = ({ query = "", onSearch }: SearchFormProps) => {
 };
 
 export default SearchForm;
-
-// import Form from "next/form";
-// import { Search } from "lucide-react";
-
-// const SearchForm = ({ query }: { query?: string }) => {
-//   return (
-//     <Form
-//       action="/"
-//       scroll={false}
-//       className=" w-full  h-auto flex bg-white border-[3px] border-[rgba(59,76,202,0.5)] rounded-[10px] p-1"
-//     >
-//       <Search className="size-5 h-auto mx-3" />
-//       <input
-//         type="text"
-//         value={query}
-//         onChange={(e) => onSearch(e.target.value)}
-//         className="w-full p-1 h-auto outline-none flex-1 font-bold text-[#3B4CCA] placeholder:font-semibold placeholder:text-[rgba(59,76,202,0.5)]"
-//         placeholder="Search for No. ID or Name"
-//       />
-//     </Form>
-//   );
-// };
-
-// export default SearchForm;
